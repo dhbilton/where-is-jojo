@@ -1,0 +1,323 @@
+[
+	{
+		"1":{
+			"_id": 1,
+			"title": "introduction",
+			"targets": ["welcome"],
+			"intent": ["hello"],
+			"text": "👋😄 Hello! I am MediBo. Your personal medical chatbot.",
+			"entities": ["medibo","chatbot"],
+			"tags": ["hello","yourself"],
+			"weights": 
+				{	
+				"information": 0,
+				"remedy": 0,
+				"general": 1,
+				"query": 0,
+				"leadgen":0
+				},
+			"embed": []
+		},
+		
+		"2":{
+			"_id": 2,
+			"title": "description",
+			"targets": ["welcome"],
+			"intent": ["description"],
+			"text": "I am here to keep you healthy by keeping a track of your 💊",
+			"entities": ["medibo","chatbot"],
+			"tags": ["medicines"],
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen": 0
+				},
+			"embed": []
+		},
+		
+		"3":{
+			"_id": 3,
+			"title": "onboarding",
+			"targets": ["onboarding","register"],
+			"intent": ["onboarding"],
+			"text": "Let's get started, shall we? 🙂",
+			"entities": ["start","begin","register"],
+			"tags": ["register","medibo"],
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": []
+		},
+		
+		"4":{
+			"_id": 4,
+			"title": "what-is-your-name",
+			"targets": ["demog","name"],
+			"intent": ["leadgen"],
+			"text": "They call me MediBo (🏥 + 🤖). What do they call you?",
+			"entities": ["medibo","call"],
+			"tags": ["name","leadgen","medibo"],
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":1
+				},
+			"embed": []
+		},
+		
+		"5":{
+			"_id": 5,
+			"title": "what-is-your-age",
+			"targets": ["demog","age"],
+			"intent": ["leadgen"],
+			"text": "Nice to meet you %s! How old are you?",
+			"entities": ["age","leadgen"],
+			"tags": ["age","leadgen"],
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":1
+				},
+			"embed": ["name"]
+		},
+		
+		"6":{
+			"_id": 6,
+			"title": "what-is-your-sex",
+			"targets": ["demog","sex"],
+			"intent": ["leadgen"],
+			"text": "Got it. If I may ask, what is your sex?",
+			"entities": ["sex","leadgen"],
+			"tags": ["register","sex","leadgen"],
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":1
+				},
+			"embed": []
+		},
+		
+		"7":{
+			"_id": 7,
+			"title": "current-medication",
+			"targets": ["demog","medicines"],
+			"intent": ["leadgen"],
+			"text": "What are the current medications that you are taking?",
+			"entities": ["medication","medicine"],
+			"tags": ["symptom","symptoms","medication","medicine"],
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 0,
+					"query": 1,
+					"leadgen":0
+				},
+			"embed": []
+		},
+	
+		"8":{
+			"_id": 8,
+			"title": "common-symptom",
+			"targets": ["response","common"],
+			"intent": ["response"],
+			"text": "Your symptom is common and not one to worry about. If it persists, call your doctor.",
+			"weights": 
+				{
+					"information": 1,
+					"remedy": 0,
+					"general": 0,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": []
+		},
+
+		"9":{
+			"_id": 9,
+			"title": "doctor-symptom",
+			"targets": ["response","serious"],
+			"intent": ["response"],
+			"text": "I advise you to contact your physician. The symptoms may be serious.",
+			"weights": 
+				{
+					"information": 1,
+					"remedy": 0,
+					"general": 0,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": []
+		},
+
+		"10":{
+			"_id": 10,
+			"title": "emergency-symptom",
+			"targets": ["response","emergency"],
+			"intent": ["response"],
+			"text": "%s, I advise you to contact 911 immediately. The symptoms may be deadly.",
+			"weights": 
+				{
+					"information": 1,
+					"remedy": 0,
+					"general": 0,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": ["name"]
+		},
+
+		"11":{
+			"_id": 11,
+			"title": "onboarding-complete",
+			"targets": ["demog","complete"],
+			"intent": ["complete"],
+			"text": "You're all set %s, Welcome to MediBo!",
+			"weights": 
+				{
+					"information": 1,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": ["name"]
+		},
+
+		"12":{
+			"_id": 12,
+			"title": "how-are-you-feeling-today",
+			"targets": ["general","hello"],
+			"intent": ["greeting"],
+			"text": "Tell me %s, how can I help you today?",
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": ["name"]
+		},
+
+		"13":{
+			"_id": 13,
+			"title": "hello-user",
+			"targets": ["hi","hello","medibo","bonjour","greetings"],
+			"intent": ["greeting"],
+			"text": "🤗 Hi there! How can I help you?",
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": []
+		},
+
+		"14":{
+			"_id": 14,
+			"title": "add-request-successful",
+			"targets": ["add","request","successful"],
+			"intent": ["confirmation"],
+			"text": "Done! 🤓 Here's how your updated record looks like:",
+			"weights": 
+				{
+					"information": 1,
+					"remedy": 0,
+					"general": 1,
+					"query": 0,
+					"leadgen":0
+				},
+			"embed": []
+		},
+
+		"15":{
+			"_id": 15,
+			"title": "add-request-successful",
+			"targets": ["request","confusion"],
+			"intent": ["confusion"],
+			"text": "Err.. I don't think I understand. 🧐 Could you try telling it to me differently?",
+			"weights": 
+				{
+					"information": 1,
+					"remedy": 0,
+					"general": 1,
+					"query": 1,
+					"leadgen":0
+				},
+			"embed": []
+		},
+
+		"16":{
+			"_id": 16,
+			"title": "display-entity",
+			"targets": ["show","name","phone","medication","age","sex","show","tell","see","describe","display","list","enlist"],
+			"intent": ["request"],
+			"text": "Sure. Here is what's in my record 📜 for your requested information: ",
+			"weights": 
+				{
+					"information": 1,
+					"remedy": 0,
+					"general": 1,
+					"query": 1,
+					"leadgen":0
+				},
+			"embed": []
+		},
+
+		"17":{
+			"_id": 17,
+			"title": "tell-joke",
+			"targets": ["joke","funny"],
+			"intent": ["request"],
+			"text": "Q: Did you hear about the optometrist that fell into his lens grinding machine? \n\n A: He made a spectacle 👓 of himself \n\n\n  🤣",
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 1,
+					"leadgen":0
+				},
+			"embed": []
+		},
+
+		"18":{
+			"_id": 18,
+			"title": "you-are-welcome",
+			"targets": ["thanks","thank","you"],
+			"intent": ["general"],
+			"text": "You are most welcome %s. \n\nLet me know if I can help you with anything else anytime. 😊",
+			"weights": 
+				{
+					"information": 0,
+					"remedy": 0,
+					"general": 1,
+					"query": 1,
+					"leadgen":0
+				},
+			"embed": ["name"]
+		}
+	}
+]
